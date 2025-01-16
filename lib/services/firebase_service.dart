@@ -183,8 +183,7 @@ class FirebaseService {
         .then((_) => flutterLocalNotificationsPlugin.cancel(0));
   }
 
-  void _handleMessage(Map<String, dynamic> data,
-      {RemoteNotification? notification, bool? isResponse}) async {
+  void _handleMessage(Map<String, dynamic> data, {bool? isResponse}) async {
     var user = AppPreferences.getLogin();
     if (user == null) return;
     log("_handleMessage ${jsonEncode(data)}");
